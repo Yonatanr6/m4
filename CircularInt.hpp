@@ -38,6 +38,8 @@ class CircularInt{
     CircularInt& operator--();
     CircularInt& operator--(int a);
     
+    CircularInt(){};
+    
     CircularInt(int a,int b){
         if (a>b){
             max_range=a;
