@@ -8,8 +8,10 @@
 #include <iostream>
 using namespace std;
 
-  ostream& CircularInt::operator<<(CircularInt hour){
-      return cout << hour.curr;
+  ostream& operator<<(ostream& out,CircularInt hour){
+      out << "";
+      out << hour.curr;
+      out << "";
   }
    CircularInt& CircularInt::operator+(int a){
 //       if(this->curr+a<this->max_range){
@@ -53,5 +55,11 @@ using namespace std;
         
     }
     CircularInt& CircularInt::operator--(int a){
+        
+    }
+    const CircularInt& CircularInt::operator+(CircularInt a){
+        
+    }
+    CircularInt& CircularInt::operator-(const CircularInt a){
         
     }

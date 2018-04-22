@@ -21,7 +21,7 @@ class CircularInt{
     int min_range, max_range, dis_max,curr;
     
 
-    ostream& operator<<(CircularInt hour);//return cout << obj.
+    friend ostream& operator<<(ostream& out,CircularInt hour);//return cout << obj.
     CircularInt& operator+(int a);
     CircularInt& operator-(int a);
     CircularInt& operator*(int a);
@@ -37,6 +37,9 @@ class CircularInt{
     
     CircularInt& operator--();
     CircularInt& operator--(int a);
+    
+    const CircularInt& operator+(CircularInt a);
+    CircularInt& operator-(const CircularInt a);
     
     CircularInt(){};
     
