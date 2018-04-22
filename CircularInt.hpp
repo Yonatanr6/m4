@@ -23,7 +23,7 @@ class CircularInt{
 
     friend ostream& operator<<(ostream& out,CircularInt hour);//return cout << obj.
     CircularInt& operator+(int a);
-    CircularInt& operator-(int a);
+    //CircularInt& operator-(int a);
     CircularInt& operator*(int a);
     CircularInt& operator/(int a);
     
@@ -39,7 +39,12 @@ class CircularInt{
     CircularInt& operator--(int a);
     
     const CircularInt& operator+(CircularInt a);
-    CircularInt& operator-(const CircularInt a);
+   friend  CircularInt operator-(const CircularInt& a);
+     
+friend    CircularInt operator-(const int a,const CircularInt& b);
+    
+   
+   
     
     CircularInt(){};
     
@@ -59,3 +64,9 @@ class CircularInt{
     }
     
 };
+inline CircularInt operator-(const int a,const CircularInt& b){
+        
+    }
+ inline CircularInt operator-(const CircularInt& a){
+        
+    }

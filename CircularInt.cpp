@@ -21,9 +21,9 @@ using namespace std;
 //       if(this->curr+a>this->max_range)
     }
     
-    CircularInt& CircularInt::operator-(int a){
-        
-    }
+//    CircularInt& CircularInt::operator-(int a){
+//        
+//    }
     CircularInt& CircularInt::operator*(int a){
         
     }
@@ -60,6 +60,6 @@ using namespace std;
     const CircularInt& CircularInt::operator+(CircularInt a){
         
     }
-    CircularInt& CircularInt::operator-(const CircularInt a){
-        
-    }
+   
+    
+    
