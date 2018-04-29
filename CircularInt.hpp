@@ -32,11 +32,15 @@ class CircularInt{
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
     
+    bool operator==(int a);
+    friend bool operator==(const CircularInt &a,const CircularInt &b);
     CircularInt& operator++();
     const CircularInt& operator++(int a);
     
     CircularInt& operator--();
     CircularInt& operator--(int a);
+    
+    
     
      friend CircularInt operator+(const CircularInt &a,int b);
     friend CircularInt operator+(const CircularInt &b,const CircularInt &a);
@@ -96,3 +100,7 @@ inline CircularInt operator+(const CircularInt &c,int b){
     temp+=b;
            return temp;
     }
+
+inline bool operator==(const CircularInt &a,const CircularInt &b){
+    
+}

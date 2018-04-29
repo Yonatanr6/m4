@@ -64,6 +64,8 @@ using namespace std;
         
     }
     
-   
+   bool CircularInt::operator==(int a){
+       
+   }
     
     
