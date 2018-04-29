@@ -219,47 +219,71 @@ inline CircularInt operator*(const CircularInt &b,const CircularInt &a){
 
 
 inline bool operator<(const CircularInt &b,const CircularInt &a){
-   
+    if(b.curr<a.curr)
+        return true;
+    return false;
     }
 inline bool operator<(const int b,const CircularInt &a){
-   
+   if(b<a.curr)
+        return true;
+    return false;
     }
 inline bool operator<(const CircularInt &b,int a){
-   
+   if(b.curr<a)
+        return true;
+    return false;
     }
 
 inline bool operator>(const CircularInt &b,const CircularInt &a){
- 
+ if(b.curr>a.curr)
+        return true;
+    return false;
     }
 inline bool operator>(const int b,const CircularInt &a){
- 
+  if(b>a.curr)
+        return true;
+    return false;
     }
 inline bool operator>(const CircularInt &a,const int b){
- 
+  if(b>a.curr)
+        return true;
+    return false;
     }
 
 inline bool operator<=(const CircularInt &b,const CircularInt &a){
-   
+    if(b.curr<=a.curr)
+        return true;
+    return false;
     }
 
 inline bool operator>=(const CircularInt &b,const CircularInt &a){
- 
+  if(b.curr>=a.curr)
+        return true;
+    return false;
     }
 
 inline bool operator>=(const int b,const CircularInt &a){
- 
+  if(b>=a.curr)
+        return true;
+    return false;
     }
 
 inline bool operator>=(const CircularInt &b,int a){
- 
+  if(b.curr>=a)
+        return true;
+    return false;
     }
 
 inline bool operator<=(const int b,const CircularInt &a){
- 
+  if(b<a.curr)
+        return true;
+    return false;
     }
 
 inline bool operator<=(const CircularInt &b,int a){
- 
+  if(b.curr<a)
+        return true;
+    return false;
     }
 
 inline CircularInt operator>>(istream& in, CircularInt &a){
