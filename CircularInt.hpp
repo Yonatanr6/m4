@@ -216,17 +216,16 @@ inline CircularInt operator/(int b,const CircularInt &a){
 
 inline CircularInt operator*=(const CircularInt &b,const CircularInt &a){
    CircularInt temp(a);
-//  temp*=b.curr;
-//  return temp;
   for(int i=1;i<a;i++)
             temp+=b.curr;
         return temp;
     }
 
 inline CircularInt operator*(const CircularInt &b,const CircularInt &a){
-   CircularInt temp(a);
-  temp*b.curr;
-  return temp;
+  CircularInt temp(a);
+  for(int i=1;i<a;i++)
+            temp+=b.curr;
+        return temp;
     }
 
 
