@@ -63,21 +63,21 @@ using namespace std;
            return *this-=a.curr;  
     }
     CircularInt& CircularInt::operator/=(int a){
-        this->curr=this->curr/a;
-       return *this;
-        // CircularInt temp(*this);
-//    for (int i = this->min_range; i < this->max_range; i++)
-//    {
-//        temp.curr= i;
-//        temp *= this->curr;
-//        if (this->curr == temp.curr)
-//        {
-//            this->curr = i;
-//            return *this;
-//        }
-//    }
-//    string ans = "here is no number x in {" + std::to_string(min) + "," + std::to_string(max) + "} such that x*" + std::to_string(num) + "=10";
-//    throw ans;
+//        this->curr=this->curr/a;
+//       return *this;
+         CircularInt temp(*this);
+    for (int i = this->min_range; i < this->max_range; i++)
+    {
+        temp.curr= i;
+        temp *= this->curr;
+        if (this->curr == temp.curr)
+        {
+            this->curr = i;
+            return *this;
+        }
+    }
+//    string ans = "here is no number x in {" + to_string:this->min_range + "," + this->max_range + "} such that x*" + a + "=10";
+    throw "no such number";
     }
     CircularInt& CircularInt::operator*=(int a){
         for(int i=1;i<a;i++)
