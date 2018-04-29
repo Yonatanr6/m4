@@ -64,7 +64,7 @@ using namespace std;
     }
     CircularInt& CircularInt::operator/=(int a){
         this->curr=this->curr/a;
-//        return *this;
+       return *this;
         // CircularInt temp(*this);
 //    for (int i = this->min_range; i < this->max_range; i++)
 //    {

@@ -53,7 +53,8 @@ class CircularInt{
     friend CircularInt operator/(const CircularInt &a,int b);
     friend CircularInt operator/(int b,const CircularInt &a);
      friend CircularInt operator/(const CircularInt &b,const CircularInt &a);
-    
+     friend CircularInt operator/=(const CircularInt &b,const CircularInt &a);
+     
      friend CircularInt operator+(const CircularInt &a,int b);
     friend CircularInt operator+(const CircularInt &b,const CircularInt &a);
     friend CircularInt operator+(int b,const CircularInt &a);
@@ -216,6 +217,11 @@ inline CircularInt operator/(int b,const CircularInt &a){
 inline CircularInt operator/(const CircularInt &a,const CircularInt &b){
            return a/b.curr;
     }
+
+inline CircularInt operator/=(const CircularInt &b,const CircularInt &a){
+        return b*a;
+    }
+
 
 inline CircularInt operator*=(const CircularInt &b,const CircularInt &a){
         return b*a;
