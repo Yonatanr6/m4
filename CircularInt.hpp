@@ -26,9 +26,10 @@ class CircularInt{
     //CircularInt& operator-(int a);
     //CircularInt& operator*(int a);
 //    CircularInt& operator/(int a);
-    
+    CircularInt& operator+=(const CircularInt &a);
     CircularInt& operator+=(int a);
     CircularInt& operator-=(int a);
+    CircularInt& operator-=(const CircularInt &a);
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
     friend CircularInt operator>>(istream& in, CircularInt &a);
@@ -113,22 +114,24 @@ class CircularInt{
     
 };
 
+inline CircularInt operator-(const CircularInt &a){
+  CircularInt temp(a);
+  temp.curr=temp.max_range-temp.curr;
+  return temp;
+        
+    }
 
 inline CircularInt operator-(const int a,const CircularInt &b){
-    CircularInt temp(b);
-    temp.curr-=a;
-    return -temp;
+    return -(b-a);
     }
 
 inline CircularInt operator-(const CircularInt &b,const int a){
     CircularInt temp(b);
     temp.curr-=a;
-    return -temp;
+    return temp;
     }
 inline CircularInt operator-(const CircularInt &b,const CircularInt &a){
-    CircularInt temp(b);
-    temp-a.curr;
-    return -temp;
+    return b-a.curr;
     }
 inline CircularInt operator-=(const CircularInt &b,const CircularInt &a){
     CircularInt temp(b);
@@ -136,12 +139,7 @@ inline CircularInt operator-=(const CircularInt &b,const CircularInt &a){
     return -temp;
     }
 
-inline CircularInt operator-(const CircularInt &a){
-  CircularInt temp(a);
-  temp.curr=temp.max_range-temp.curr;
-  return temp;
-        
-    }
+
 
 
 
