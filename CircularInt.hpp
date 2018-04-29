@@ -44,7 +44,7 @@ class CircularInt{
     friend bool operator!=(const CircularInt &b,int a);
     
     CircularInt& operator++();
-    const CircularInt& operator++(int a);
+    const int operator++(int a);
     
     CircularInt& operator--();
     CircularInt& operator--(int a);

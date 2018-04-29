@@ -65,9 +65,10 @@ using namespace std;
         this->curr+=1;
         return *this;
     }
-    const CircularInt& CircularInt::operator++(int a){
+    const int CircularInt::operator++(int a){
+        int temp= this->curr;
       this->curr+=1;
-        return *this;  
+        return temp;  
     }
     
     CircularInt& CircularInt::operator--(){
