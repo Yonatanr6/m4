@@ -63,25 +63,11 @@ using namespace std;
            return *this-=a.curr;  
     }
     CircularInt& CircularInt::operator/=(int a){
-//        this->curr=this->curr/a;
-//       return *this;
-       //  CircularInt temp(*this);
-//    for (int i = this->min_range; i < this->max_range; i++)
-//    {
-//        temp.curr= i;
-//        temp *= this->curr;
-//        if (this->curr == temp.curr)
-//        {
-//            this->curr = i;
-//            return *this;
-//        }
-//    }
         int temp=this->curr/a, temp2=temp*a;
         if(this->curr==temp2){
             this->curr=this->curr/a;
              return *this;
-        }
-           
+        } 
     throw "no such number";
     }
     CircularInt& CircularInt::operator*=(int a){

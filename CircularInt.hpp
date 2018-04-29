@@ -37,9 +37,11 @@ class CircularInt{
     
     bool operator==(int a);
     bool operator!=(int a);
-    friend bool operator==(const CircularInt &a,const CircularInt &b);
     
+    friend bool operator==(const CircularInt &a,const CircularInt &b);
+    friend bool operator==(const CircularInt &b,int a);
     friend bool operator==(int a,const CircularInt &b);
+    
     friend bool operator!=(const CircularInt &a,const CircularInt &b);
     friend bool operator!=(int a,const CircularInt &b); 
     friend bool operator!=(const CircularInt &b,int a);
@@ -182,6 +184,12 @@ inline bool operator==(const CircularInt &a,const CircularInt &b){
 }
 
 inline bool operator==(int a,const CircularInt &b){
+     if(b.curr==a)
+        return true;
+    return false;
+}
+
+inline bool operator==(const CircularInt &b,int a){
      if(b.curr==a)
         return true;
     return false;
