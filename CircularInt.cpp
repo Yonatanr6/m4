@@ -15,6 +15,7 @@ using namespace std;
   }
   
   CircularInt& CircularInt::operator=(int a){
+      if(a>=this->min_range && a<=this->max_range)
        this->curr= a;
        return *this;
     }
