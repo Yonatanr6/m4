@@ -44,7 +44,7 @@ class CircularInt{
     friend bool operator!=(const CircularInt &b,int a);
     
     CircularInt& operator++(int);
-   // const CircularInt& operator++(int a);
+    const CircularInt& operator++();
     
     CircularInt& operator--();
     CircularInt& operator--(int a);
@@ -216,8 +216,11 @@ inline CircularInt operator/(int b,const CircularInt &a){
 
 inline CircularInt operator*=(const CircularInt &b,const CircularInt &a){
    CircularInt temp(a);
-  temp*b.curr;
-  return temp;
+//  temp*=b.curr;
+//  return temp;
+  for(int i=1;i<a;i++)
+            temp+=b.curr;
+        return temp;
     }
 
 inline CircularInt operator*(const CircularInt &b,const CircularInt &a){

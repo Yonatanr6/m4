@@ -64,11 +64,11 @@ using namespace std;
     CircularInt& CircularInt::operator++(int){
         return (*this+=1);
     }
-//    const CircularInt& CircularInt::operator++(int){
-//        CircularInt temp (*this);  
-//   ++*this;  
-//   return temp;    
-//    }
+    const CircularInt& CircularInt::operator++(){
+        CircularInt temp (*this);  
+   ++*this;  
+   return temp;    
+    }
     
     CircularInt& CircularInt::operator--(){
         
