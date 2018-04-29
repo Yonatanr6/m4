@@ -32,11 +32,11 @@ using namespace std;
 //    CircularInt& CircularInt::operator-(int a){
 //        
 //    }
-    CircularInt& CircularInt::operator*(int a){
-         for(int i=1;i<a;i++)
-            *this+=this->curr;
-        return *this;
-    }
+//    CircularInt& CircularInt::operator*(int a){
+//         for(int i=1;i<a;i++)
+//            *this+=this->curr;
+//        return *this;
+//    }
     
     
     CircularInt& CircularInt::operator/(int a){
