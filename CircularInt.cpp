@@ -25,7 +25,9 @@ using namespace std;
     }
     
    bool CircularInt::operator!=(int a){
-       
+        if(this->curr!=a)
+        return true;
+    return false;
    }
 //    CircularInt& CircularInt::operator-(int a){
 //        
@@ -76,7 +78,9 @@ using namespace std;
     }
     
    bool CircularInt::operator==(int a){
-       
+        if(this->curr==a)
+        return true;
+    return false;
    }
     
     
