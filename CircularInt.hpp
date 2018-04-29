@@ -224,22 +224,15 @@ inline CircularInt operator*=(const CircularInt &b,const CircularInt &a){
     }
 
 inline CircularInt operator*(const CircularInt &b,const CircularInt &a){
-  CircularInt temp(a);
-  for(int i=1;i<a;i++)
-            temp+=b.curr;
-        return temp;
+    return b*a.curr;
     }
 inline CircularInt operator*(const int b,const CircularInt &a){
   CircularInt temp(a);
-  for(int i=1;i<a;i++)
-            temp+=b;
-        return temp;
+  temp*=b;
+  return temp;
     }
 inline CircularInt operator*(const CircularInt &b,const int a){
-  CircularInt temp(b);
-  for(int i=1;i<a;i++)
-            temp+=a;
-        return temp;
+    return a*b;
     }
 
 
