@@ -255,7 +255,7 @@ inline bool operator>(const int b,const CircularInt &a){
     return false;
     }
 inline bool operator>(const CircularInt &a,const int b){
-  if(b>a.curr)
+  if(a.curr>b)
         return true;
     return false;
     }
