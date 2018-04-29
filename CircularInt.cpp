@@ -24,6 +24,9 @@ using namespace std;
        return *this;
     }
     
+   bool CircularInt::operator!=(int a){
+       
+   }
 //    CircularInt& CircularInt::operator-(int a){
 //        
 //    }
