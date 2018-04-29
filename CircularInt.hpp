@@ -319,33 +319,65 @@ inline bool operator<=(const CircularInt &b,int a){
     }
 
 inline istream& operator>>(istream& in, CircularInt &a){
-    int temp;
-    in>> temp;
-    if (temp > a.min_range && temp < a.max_range)
-  {
-     a.max_range=temp;
-  }
-  else
-  {
-    int p = a.max_range - a.min_range + 1;
-    if (temp > a.max_range)
-    {
-
-      while (temp > a.max_range)
-        temp = temp - p;
-      a.max_range=temp;
+   
+     
+    int temp,temp2,temp3;
+    in>> temp>> temp2>> temp3;
+    if(temp>temp2&&temp>temp3){
+        a.max_range=temp;
+        if(temp2>temp3){
+            a.min_range=temp3;
+            a.curr=temp2;
+        }
+        else
+            a.min_range=temp2;
+            a.curr=temp3;
     }
-    else
-    {
-      if (temp < a.min_range)
-      {
-
-        while (temp < a.min_range)
-          temp = temp + p;
-      }
-      a.max_range=temp;
+    else if(temp2>temp&&temp2>temp3){
+        a.max_range=temp2;
+        if(temp>temp3){
+             a.min_range=temp3;
+            a.curr=temp;
     }
-  }
+        else
+            a.min_range=temp;
+            a.curr=temp3;
+}
+    else 
+        a.max_range=temp3;
+    if(temp>temp2){
+             a.min_range=temp2;
+            a.curr=temp;
+    }
+        else
+            a.min_range=temp;
+            a.curr=temp2;
+//    in.>> temp;
+//    if (temp > a.min_range && temp < a.max_range)
+//  {
+//     a.max_range=temp;
+//  }
+//  else
+//  {
+//    int p = a.max_range - a.min_range + 1;
+//    if (temp > a.max_range)
+//    {
+//
+//      while (temp > a.max_range)
+//        temp = temp - p;
+//      a.max_range=temp;
+//    }
+//    else
+//    {
+//      if (temp < a.min_range)
+//      {
+//
+//        while (temp < a.min_range)
+//          temp = temp + p;
+//      }
+//      a.max_range=temp;
+//    }
+//  }
         //in>> a.max_range>> a.min_range>> a.curr;  
     return in; 
     }
