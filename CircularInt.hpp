@@ -31,7 +31,7 @@ class CircularInt{
     CircularInt& operator-=(int a);
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
-    CircularInt& operator>>(const CircularInt &a);
+    friend CircularInt operator>>(ostream& in,const CircularInt &a);
    CircularInt& operator=(int b);
     
     bool operator==(int a);
@@ -41,6 +41,7 @@ class CircularInt{
     friend bool operator==(int a,const CircularInt &b);
     friend bool operator!=(const CircularInt &a,const CircularInt &b);
     friend bool operator!=(int a,const CircularInt &b); 
+    friend bool operator!=(const CircularInt &b,int a);
     
     CircularInt& operator++();
     const CircularInt& operator++(int a);
@@ -186,6 +187,9 @@ inline bool operator!=(const CircularInt &a,const CircularInt &b){
 inline bool operator!=(int a,const CircularInt &b){
     
 }
+inline bool operator!=(const CircularInt &b,int a){
+    
+}
 
 inline CircularInt operator/(const CircularInt &a,int b){
     CircularInt temp(a);
@@ -256,4 +260,8 @@ inline bool operator<=(const int b,const CircularInt &a){
 
 inline bool operator<=(const CircularInt &b,int a){
  
+    }
+
+inline CircularInt operator>>(ostream& in,const CircularInt &a){
+        
     }
