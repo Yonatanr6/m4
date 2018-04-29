@@ -31,7 +31,7 @@ class CircularInt{
     CircularInt& operator-=(int a);
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
-    friend CircularInt operator>>(istream in,const CircularInt &a);
+    friend CircularInt operator>>(istream& in,const CircularInt &a);
    CircularInt& operator=(int b);
     
     bool operator==(int a);
@@ -262,6 +262,6 @@ inline bool operator<=(const CircularInt &b,int a){
  
     }
 
-inline CircularInt operator>>(istream in,const CircularInt &a){
+inline CircularInt operator>>(istream& in,const CircularInt &a){
         
     }
