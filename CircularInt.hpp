@@ -18,7 +18,7 @@ using namespace std;
 class CircularInt{
     
  public:   
-    int min_range, max_range, dis_max,curr;
+    int min_range, max_range, curr;
     
 
     friend ostream& operator<<(ostream& out,CircularInt hour);//return cout << obj.
@@ -263,6 +263,33 @@ inline bool operator<=(const CircularInt &b,int a){
     }
 
 inline CircularInt operator>>(istream& in, CircularInt &a){
-        in>> a.max_range>> a.min_range>> a.curr;  
+    int temp;
+    in>> temp;
+    if (temp > a.min_range && temp < a.max_range)
+  {
+     a.max_range=temp;
+  }
+  else
+  {
+    int p = a.max_range - a.min_range + 1;
+    if (temp > a.max_range)
+    {
+
+      while (temp > a.max_range)
+        temp = temp - p;
+      a.max_range=temp;
+    }
+    else
+    {
+      if (temp < a.min_range)
+      {
+
+        while (temp < a.min_range)
+          temp = temp + p;
+      }
+      a.max_range=temp;
+    }
+  }
+        //in>> a.max_range>> a.min_range>> a.curr;  
     return a; 
     }
