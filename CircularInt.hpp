@@ -32,7 +32,7 @@ class CircularInt{
     CircularInt& operator-=(const CircularInt &a);
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
-    friend CircularInt operator>>(istream& in, CircularInt &a);
+    friend istream& operator>>(istream& in, CircularInt &a);
    CircularInt& operator=(int b);
     
     bool operator==(int a);
@@ -318,7 +318,7 @@ inline bool operator<=(const CircularInt &b,int a){
     return false;
     }
 
-inline CircularInt operator>>(istream& in, CircularInt &a){
+inline istream& operator>>(istream& in, CircularInt &a){
     int temp;
     in>> temp;
     if (temp > a.min_range && temp < a.max_range)
@@ -347,5 +347,5 @@ inline CircularInt operator>>(istream& in, CircularInt &a){
     }
   }
         //in>> a.max_range>> a.min_range>> a.curr;  
-    return a; 
+    return in; 
     }
