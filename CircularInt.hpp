@@ -178,7 +178,7 @@ inline CircularInt operator+=(const CircularInt &b,const CircularInt &a){
 
 
 inline bool operator==(const CircularInt &a,const CircularInt &b){
-     if(b.curr==a.curr)
+     if(a.curr==b.curr)
         return true;
     return false;
 }
@@ -307,13 +307,13 @@ inline bool operator>=(const CircularInt &b,int a){
     }
 
 inline bool operator<=(const int b,const CircularInt &a){
-  if(b<a.curr)
+  if(b<=a.curr)
         return true;
     return false;
     }
 
 inline bool operator<=(const CircularInt &b,int a){
-  if(b.curr<a)
+  if(b.curr<=a)
         return true;
     return false;
     }
