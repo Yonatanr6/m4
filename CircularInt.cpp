@@ -14,7 +14,8 @@ using namespace std;
       out << "";
   }
    CircularInt& CircularInt::operator+(int a){
-       
+       this->curr=this->curr+=a;
+       return *this;
     }
     
 //    CircularInt& CircularInt::operator-(int a){
