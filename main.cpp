@@ -21,6 +21,7 @@ int main() {
 	} catch (const string& message) {
 		cout << message << endl;     // "There is no number x in {1,12} such that x*3=10"
 	}
+        cout << ""<< endl;
 
 	// RIDDLES (not for submission): 
 	//  * when is there exactly one answer to a/b?
