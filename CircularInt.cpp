@@ -61,15 +61,14 @@ using namespace std;
         return *this;
     }
     
-    CircularInt& CircularInt::operator++(){
-        this->curr+=1;
-        return *this;
+    CircularInt& CircularInt::operator++(int){
+        return (*this+=1);
     }
-    const int CircularInt::operator++(int a){
-        int temp= this->curr;
-      this->curr+=1;
-        return temp;  
-    }
+//    const CircularInt& CircularInt::operator++(int){
+//        CircularInt temp (*this);  
+//   ++*this;  
+//   return temp;    
+//    }
     
     CircularInt& CircularInt::operator--(){
         
