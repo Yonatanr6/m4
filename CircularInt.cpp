@@ -15,7 +15,7 @@ using namespace std;
   }
   
   CircularInt& CircularInt::operator=(int a){
-       this->curr= ((this->curr-this->min_range)+(a%(this->max_range-this->min_range+1)))%(this->max_range-this->min_range+1)+this->min_range;
+       this->curr= a;
        return *this;
     }
   
