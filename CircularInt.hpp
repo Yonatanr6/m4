@@ -150,7 +150,7 @@ inline CircularInt operator+(const CircularInt &a){
     }
 inline CircularInt operator+(const CircularInt &b,const CircularInt &a){
        CircularInt temp(a);
-  temp+a.curr;
+  temp+b.curr;
   return temp;
         
     }
