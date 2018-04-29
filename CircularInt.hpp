@@ -320,9 +320,6 @@ inline bool operator<=(const CircularInt &b,int a){
 
 inline istream &operator>>(istream& in, CircularInt &a){
    
-     
-    
-     
     int temp,temp2,temp3;
     in>> temp >> temp2>> temp3;
     if(temp>=a.min_range&&temp>=a.min_range&&temp2>=a.min_range&&temp2>=a.min_range&&temp3>=a.min_range&&temp3>=a.min_range){
@@ -359,6 +356,8 @@ inline istream &operator>>(istream& in, CircularInt &a){
         }
     }
     }
+    else
+        throw "not a number";
 //    in.>> temp;
 //    if (temp > a.min_range && temp < a.max_range)
 //  {
