@@ -14,11 +14,8 @@ using namespace std;
       out << "";
   }
    CircularInt& CircularInt::operator+(int a){
-//       if(this->curr+a<this->max_range){
-//           this->curr=this->curr+a;
-//            return this->curr;
-//       }
-//       if(this->curr+a>this->max_range)
+        this->curr= ((this->curr-this->min_range)+(a%(this->max_range-this->min_range+1)))%(this->max_range-this->min_range+1)+this->min_range;
+           return *this; 
     }
     
 //    CircularInt& CircularInt::operator-(int a){
@@ -28,27 +25,36 @@ using namespace std;
         
     }
     CircularInt& CircularInt::operator/(int a){
+         this->curr=this->curr/a;
+        return *this;
         
     }
     
+    
     CircularInt& CircularInt::operator+=(int a){
-        
+           this->curr= ((this->curr-this->min_range)+(a%(this->max_range-this->min_range+1)))%(this->max_range-this->min_range+1)+this->min_range;
+           return *this;        
     }
     CircularInt& CircularInt::operator-=(int a){
-        
+         this->curr= ((this->curr-this->min_range)-(a%(this->max_range-this->min_range+1)))%(this->max_range-this->min_range+1)+this->min_range;
+           return *this;  
     }
     CircularInt& CircularInt::operator/=(int a){
         
     }
     CircularInt& CircularInt::operator*=(int a){
-        
+        for(int i=1;i<a;i++)
+            *this+=this->curr;
+        return *this;
     }
     
     CircularInt& CircularInt::operator++(){
-        
+        this->curr+=1;
+        return *this;
     }
     const CircularInt& CircularInt::operator++(int a){
-        
+      this->curr+=1;
+        return *this;  
     }
     
     CircularInt& CircularInt::operator--(){
@@ -57,9 +63,7 @@ using namespace std;
     CircularInt& CircularInt::operator--(int a){
         
     }
-    const CircularInt& CircularInt::operator+(CircularInt a){
-        
-    }
+    
    
     
     
