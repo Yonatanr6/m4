@@ -34,6 +34,7 @@ class CircularInt{
     
     bool operator==(int a);
     friend bool operator==(const CircularInt &a,const CircularInt &b);
+    friend bool operator==(int a,const CircularInt &b);
     CircularInt& operator++();
     const CircularInt& operator++(int a);
     
@@ -44,10 +45,13 @@ class CircularInt{
     
      friend CircularInt operator+(const CircularInt &a,int b);
     friend CircularInt operator+(const CircularInt &b,const CircularInt &a);
+    friend CircularInt operator+(int b,const CircularInt &a);
    
     
    friend CircularInt operator-(const CircularInt &a);
    friend CircularInt operator-(const int a,const CircularInt &b);
+   friend CircularInt operator-(const CircularInt &b,const int a);
+   friend CircularInt operator-(const CircularInt &b,const CircularInt &a);
     
    
    
@@ -83,6 +87,17 @@ inline CircularInt operator-(const int a,const CircularInt &b){
     return -temp;
     }
 
+inline CircularInt operator-(const CircularInt &b,const int a){
+    CircularInt temp(b);
+    temp.curr-=a;
+    return -temp;
+    }
+inline CircularInt operator-(const CircularInt &b,const CircularInt &a){
+    CircularInt temp(b);
+    temp-a.curr;
+    return -temp;
+    }
+
 inline CircularInt operator-(const CircularInt &a){
   CircularInt temp(a);
   temp.curr=temp.max_range-temp.curr;
@@ -100,7 +115,16 @@ inline CircularInt operator+(const CircularInt &c,int b){
     temp+=b;
            return temp;
     }
+inline CircularInt operator+(int b,const CircularInt &c){
+    CircularInt temp(c);
+    temp+=b;
+           return temp;
+    }
 
 inline bool operator==(const CircularInt &a,const CircularInt &b){
+    
+}
+
+inline bool operator==(int a,const CircularInt &b){
     
 }
