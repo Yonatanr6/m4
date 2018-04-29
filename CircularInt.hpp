@@ -69,6 +69,7 @@ class CircularInt{
     friend CircularInt operator-=(const CircularInt &b,const CircularInt &a);
     
    friend CircularInt operator*=(const CircularInt &b,const CircularInt &a);
+   
     friend CircularInt operator*(const CircularInt &b,const CircularInt &a);
     friend CircularInt operator*(const int b,const CircularInt &a);
     friend CircularInt operator*(const CircularInt &b,const int a);
@@ -217,19 +218,20 @@ inline CircularInt operator/(const CircularInt &a,const CircularInt &b){
     }
 
 inline CircularInt operator*=(const CircularInt &b,const CircularInt &a){
-        return a*b;
+        return b*a;
     }
 
 inline CircularInt operator*(const CircularInt &b,const CircularInt &a){
     return b*a.curr;
     }
 inline CircularInt operator*(const int b,const CircularInt &a){
-  CircularInt temp(a);
-  temp*=b;
-  return temp;
+  return a*b;
     }
 inline CircularInt operator*(const CircularInt &b,const int a){
-    return a*b;
+    
+     CircularInt temp(b);
+  temp*=a;
+  return temp;
     }
 
 
