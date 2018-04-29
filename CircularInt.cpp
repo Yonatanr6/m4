@@ -30,6 +30,10 @@ using namespace std;
     CircularInt& CircularInt::operator*(int a){
         
     }
+    
+    CircularInt& CircularInt::operator>>(const CircularInt &a){
+        
+    }
     CircularInt& CircularInt::operator/(int a){
          this->curr=this->curr/a;
         return *this;

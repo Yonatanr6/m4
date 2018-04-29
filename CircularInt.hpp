@@ -31,7 +31,7 @@ class CircularInt{
     CircularInt& operator-=(int a);
     CircularInt& operator/=(int a);
     CircularInt& operator*=(int a);
-    
+    CircularInt& operator>>(const CircularInt &a);
    CircularInt& operator=(int b);
     
     bool operator==(int a);
@@ -56,8 +56,9 @@ class CircularInt{
     friend CircularInt operator+(int b,const CircularInt &a);
     friend CircularInt operator+(const CircularInt &a);
      friend CircularInt operator+=(const CircularInt &b,const CircularInt &a);
+     
+     
    
-    
    friend CircularInt operator-(const CircularInt &a);
    friend CircularInt operator-(const int a,const CircularInt &b);
    friend CircularInt operator-(const CircularInt &b,const int a);
@@ -68,9 +69,20 @@ class CircularInt{
     friend CircularInt operator*(const CircularInt &b,const CircularInt &a);
     
     friend bool operator<(const CircularInt &b,const CircularInt &a);
+    friend bool operator<(const int b,const CircularInt &a);
+    friend bool operator<(const CircularInt &b,const int a);
+    
     friend bool operator>(const CircularInt &b,const CircularInt &a);
+    friend bool operator>(const int a,const CircularInt &b);
+    friend bool operator>(const CircularInt &a,const int b);
+    
      friend bool operator<=(const CircularInt &b,const CircularInt &a);
+     friend bool operator<=(const int b,const CircularInt &a);
+      friend bool operator<=(const CircularInt &b,const int a);
+     
     friend bool operator>=(const CircularInt &b,const CircularInt &a);
+     friend bool operator>=(const int b,const CircularInt &a);
+      friend bool operator>=(const CircularInt &b,const int a);
    
     
     CircularInt(){};
@@ -200,11 +212,25 @@ inline CircularInt operator*(const CircularInt &b,const CircularInt &a){
   return temp;
     }
 
+
+
 inline bool operator<(const CircularInt &b,const CircularInt &a){
+   
+    }
+inline bool operator<(const int b,const CircularInt &a){
+   
+    }
+inline bool operator<(const CircularInt &b,int a){
    
     }
 
 inline bool operator>(const CircularInt &b,const CircularInt &a){
+ 
+    }
+inline bool operator>(const int b,const CircularInt &a){
+ 
+    }
+inline bool operator>(const CircularInt &a,const int b){
  
     }
 
@@ -213,5 +239,21 @@ inline bool operator<=(const CircularInt &b,const CircularInt &a){
     }
 
 inline bool operator>=(const CircularInt &b,const CircularInt &a){
+ 
+    }
+
+inline bool operator>=(const int b,const CircularInt &a){
+ 
+    }
+
+inline bool operator>=(const CircularInt &b,int a){
+ 
+    }
+
+inline bool operator<=(const int b,const CircularInt &a){
+ 
+    }
+
+inline bool operator<=(const CircularInt &b,int a){
  
     }
