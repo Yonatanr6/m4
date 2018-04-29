@@ -321,17 +321,20 @@ inline bool operator<=(const CircularInt &b,int a){
 inline istream &operator>>(istream& in, CircularInt &a){
    
      
+    
+     
     int temp,temp2,temp3;
-    in>> temp>> temp2>> temp3;
+    in>> temp >> temp2>> temp3;
+    if(temp>=a.min_range&&temp>=a.min_range&&temp2>=a.min_range&&temp2>=a.min_range&&temp3>=a.min_range&&temp3>=a.min_range){
     if(temp>temp2&&temp>temp3){
         a.max_range=temp;
         if(temp2>temp3){
             a.min_range=temp3;
             a.curr=temp2;
         }
-        else
-            a.min_range=temp2;
-            a.curr=temp3;
+        else{
+            a.min_range=temp2; 
+           a.curr=temp3;}
     }
     else if(temp2>temp&&temp2>temp3){
         a.max_range=temp2;
@@ -339,19 +342,23 @@ inline istream &operator>>(istream& in, CircularInt &a){
              a.min_range=temp3;
             a.curr=temp;
     }
-        else
+        else{
             a.min_range=temp;
             a.curr=temp3;
+        }
 }
-    else 
+    else if(temp3>temp &&temp3>temp){
         a.max_range=temp3;
     if(temp>temp2){
              a.min_range=temp2;
             a.curr=temp;
     }
-        else
+        else{
             a.min_range=temp;
             a.curr=temp2;
+        }
+    }
+    }
 //    in.>> temp;
 //    if (temp > a.min_range && temp < a.max_range)
 //  {
